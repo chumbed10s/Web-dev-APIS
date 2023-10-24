@@ -1,0 +1,138 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 20 oct. 2023, 19:06:50
+    Author     : lucia
+*/
+
+
+body {
+    background: linear-gradient(225deg,#f700ff, #00c1fc);
+    color: #000000;
+    font-family: "Product Sans";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.header {
+    text-align: center;
+    background: linear-gradient(to right, #2bff00, #00c1fc);
+    padding: 20px;
+    color: #000000;
+    border-radius: 20px;
+    margin: 20px;
+    display:block;
+    width: 150vh;
+
+}
+
+.form_main {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    width: 150vh;
+    justify-content: space-around;
+}
+
+.form_input {
+    margin-bottom: 5px;
+    border-radius: 20px;
+    border-color: transparent;
+    margin-right: 5px;
+    text-wrap: pretty;
+}
+
+.form_input:focus {
+    outline: none;
+    border: 2px solid #27df00;
+    justify-content: center;
+}
+
+.form_input::placeholder {
+    color: #5f5f5f;
+    font-family: "Product Sans";
+    font-size: 14px;
+}
+
+.fieldsetform {
+    border-radius: 20px;
+    border: 2px solid #ffffff;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.form_image {
+    border-radius: 20px;
+    border: 2px solid #000000;
+}
+.form_image:hover{
+    border-radius: 20px;
+    border: 2px solid #27df00;
+}
+
+.select {
+    border-radius: 20px;
+    color: #000000;
+}
+
+.galleryicon {
+    margin-top: 10px;
+    padding: 100px;
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    border: 2px dotted rgba(255, 255, 255, 0.3);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    
+}
+.cancelbutton {
+    background: rgba(251, 0, 0, 0.8);
+    color: #000000;
+    width: 10vh;
+    height: 4vh;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    font-family: "Product Sans";
+    font-size: 16px;
+}
+.savebutton {
+    background: rgba(43, 255, 0, 0.8);
+    color: #000000;
+    width: 10vh;
+    height: 4vh;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    font-family: "Product Sans";
+    font-size: 16px;
+}

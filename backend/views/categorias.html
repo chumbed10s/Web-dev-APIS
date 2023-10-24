@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Alta de Categorías</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="stylesheet" type="text/css" rel="stylesheet" href="../../assets/css/estilos.css">
+    <script src="set_theme.js" defer></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <label for="colormode">Tema</label>
+            <select name="colormode" title="Tema" id="thememode" class="select">
+                <option value="enabled">🌙 Oscuro</option>
+                <option value="disabled">☀️ Claro</option>
+                <option value="auto" selected>🎨 Auto</option>
+            </select>
+            <h1>Alta Categorías</h1>
+            <p>Da de alta una nueva categoría</p>
+        </div>
+
+        <div class="form_main">
+            
+            <form action="" method="POST">
+                <fieldset class="fieldsetform">
+                    <legend>Datos de la categoría</legend>
+                    <input class="form_input" type="text" name="nombre" placeholder="Nombre">
+                    <input class="form_input" type="text" name="descripcion" placeholder="Descripción">
+                    <input class="form_input" type="text" name="tags" placeholder="Tags (separados por coma)">
+                </fieldset>
+                <br>
+                <fieldset class="fieldsetform">
+                    <legend>Personalización</legend>
+                    <label for="color">Color:</label>
+                    <input class="form_input" type="color" name="color" placeholder="Color de la categoría">
+                    <label for="icon">Icono</label>
+                    <input class="form_image" type="image" name="icon" src="../../assets/img/icon.svg" placeholder="Icono de la categoría" title="Subir icono">
+                    
+                </fieldset>
+                <div class="buttons">
+                    <button type="button" class="cancelbutton">Cancelar</button>
+                    <button type="button" class="savebutton">Guardar</button>
+                </div>
+        </div>
+        <div class="header">
+            <p>Luciano Nicolas Bovero - 46.152.500</p>
+        </div>
+    </div>
+</body>
+</html>

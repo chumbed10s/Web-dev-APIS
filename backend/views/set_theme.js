@@ -11,19 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
     let getting = window.matchMedia("(prefers-color-scheme: dark)");
     let isdark = getting.matches;
 
-
-    
-
-
     function setdark() {
         if (isdark) {
-            console.log("darkmode activado");
-            stylesheet.href = "../../assets/css/darkmode.css";
+            stylesheet.href = "../../assets/css/dark/estilos.css";
             localStorage.setItem("darkmode", "enabled");
             isdark = true;
         } else {
-            console.log("darkmode desactivado");
-            stylesheet.href = "../../assets/css/estilos.css";
+            stylesheet.href = "../../assets/css/light/estilos.css";
             localStorage.setItem("darkmode", "disabled");
             isdark = false;
         }

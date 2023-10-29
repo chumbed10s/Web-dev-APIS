@@ -9,8 +9,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <title>Alta de Producto</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link id="stylesheet" type="text/css" rel="stylesheet" href="../../assets/css/estilos.css">
+    <link id="stylesheet" type="text/css" rel="stylesheet" href="../../assets/css/light/estilos.css">
     <script src="set_theme.js" defer></script>
+    <script type="module" src="../../assets/js/assets.js"></script>
+
+    <!-- incluir jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 </head>
 <body>
@@ -28,30 +32,32 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
         <div class="form_main">
             
-            <form action="" method="POST">
+            <form action="" method="POST", id="productForm">
                 <fieldset class="fieldsetform">
                     <legend>Datos del Producto</legend>
-                    <input class="form_input" type="text" name="nombre" placeholder="Nombre">
-                    <input class="form_input" type="text" name="descripcion" placeholder="Descripción">
-                    <select title="Categoria" name="categoria" id="categoria" class="select">
-                        <option value="1">No hay categorías</option>
+                    <input class="form_input" type="text" name="nombre" placeholder="Nombre" id="name">
+                    <input class="form_input" type="text" name="descripcion" placeholder="Descripción" id="description">
+                    <select title="Categoria" name="categoria" id="category" class="select">
+                        <optgroup label="Tecnologia">
+                            <option value="computers">Computadoras</option>
+                            <option value="printers">Impresoras</option>
+                        </optgroup>
+                        <option value="audio">Audio</option>
                     </select>
                     
                     <br>
-                    <img src="../../assets/img/galleryadd.svg" alt="icono" class="galleryicon" title="Subir icono">
+                    <img src="../../assets/img/galleryadd.svg" alt="icono" class="galleryicon" title="Subir icono" id="galleryicon">
                 </fieldset>
                 <br>
                 <fieldset class="fieldsetform">
                     <legend>Personalización</legend>
                     <label for="color">Color:</label>
                     <input class="form_input" type="color" name="color" placeholder="Color de la categoría">
-                    <label for="icon">Icono</label>
-                    <input class="form_image" type="image" name="icon" src="../../assets/img/icon.svg" placeholder="Icono de la categoría" title="Subir icono">
                     
                 </fieldset>
                 <div class="buttons">
-                    <button type="button" class="cancelbutton">Cancelar</button>
-                    <button type="button" class="savebutton">Guardar</button>
+                    <button type="reset" class="cancelbutton">Cancelar</button>
+                    <button type="submit" class="savebutton">Guardar</button>
                 </div>
         </div>
         <div class="header">

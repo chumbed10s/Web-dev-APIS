@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
         var name = $('#name').val();
         var description = $('#description').val();
         var tags = $('#tags').val();
-        if (name && description && tags) {
-            
-            alert(`Se guardo correctamente la categoria "${name}": ${description}`);
-        } else {
+
+        if (!$.trim(name) || !$.trim(description) || !$.trim(tags)) {
             alert('Por favor complete todos los campos');
+        } else {
+            alert(`Se guardo correctamente la categoria "${name}": ${description} con las etiquetas ${tags}`);
         }
     });
 
@@ -22,10 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
         var name = $('#name').val();
         var description = $('#description').val();
         var categoria = $('#category').val();
-        if (name && description && categoria) {
-            alert(`Se guardo correctamente el producto "${name}": ${description}`);
-        } else {
+        if (!$.trim(name) || !$.trim(description) || !$.trim(categoria)) {
             alert('Por favor complete todos los campos');
+        } else {
+            alert(`Se guardo correctamente el producto "${name}": ${description} en la categoria ${categoria}`);
         }
     })
 });

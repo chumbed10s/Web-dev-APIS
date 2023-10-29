@@ -30,8 +30,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <p>Da de alta un nuevo producto</p>
         </div>
 
+        
         <div class="form_main">
-            
+            <div id="feedback">
+            </div>
             <form action="" method="POST", id="productForm">
                 <fieldset class="fieldsetform">
                     <legend>Datos del Producto</legend>
@@ -52,11 +54,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <fieldset class="fieldsetform">
                     <legend>Personalización</legend>
                     <label for="color">Color:</label>
-                    <input class="form_input" type="color" name="color" placeholder="Color de la categoría">
+                    <input class="form_input" type="color" value=#00cc00 name="color" placeholder="Color de la categoría">
                     
                 </fieldset>
                 <div class="buttons">
-                    <button type="reset" class="cancelbutton">Cancelar</button>
+                    <button type="reset" class="cancelbutton" id="cancelbutton">Cancelar</button>
                     <button type="submit" class="savebutton">Guardar</button>
                 </div>
         </div>

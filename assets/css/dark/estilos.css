@@ -45,7 +45,7 @@ body {
     border-radius: 20px;
     margin-bottom: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 20px;
     width: 150vh;
     justify-content: space-around;
@@ -137,4 +137,16 @@ body {
     margin-left: 5px;
     font-family: "Product Sans";
     font-size: 16px;
+}
+#feedback {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }

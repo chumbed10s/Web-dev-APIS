@@ -9,24 +9,57 @@ document.addEventListener('DOMContentLoaded', function() {
         var description = $('#description').val();
         var tags = $('#tags').val();
 
-        if (!$.trim(name) || !$.trim(description) || !$.trim(tags)) {
-            alert('Por favor complete todos los campos');
+        const errors = [];
+
+        if (!$.trim(name)) errors.push('Nombre'); 
+        if (!$.trim(description)) errors.push('Descripción');
+        if (!$.trim(tags)) errors.push('Tags');
+
+        if (errors.length > 0) {
+            $('#feedback').html(`⚠️ Por favor complete todos los campos: <br>- ${errors.join('<br>- ')}`);
+            $('#feedback').css('display', 'flex');
+            $('#feedback').css('background', 'rgba(255, 0, 0, 0.3)');
+
         } else {
-            alert(`Se guardo correctamente la categoria "${name}": ${description} con las etiquetas ${tags}`);
+            $('#feedback').html(`<p>✅ Se guardo correctamente la categoría <b>${name}</p>`);
+            $('#feedback').css('display', 'flex');
+            $('#feedback').css('background', 'rgba(0, 255, 0, 0.3)');
+            this.reset();
         }
     });
 
     $("#productForm").submit(function(event) {
         // verificar que todos los campos estén completos usando jquery
         event.preventDefault();
+
         var name = $('#name').val();
         var description = $('#description').val();
         var categoria = $('#category').val();
-        if (!$.trim(name) || !$.trim(description) || !$.trim(categoria)) {
-            alert('Por favor complete todos los campos');
+        
+        const errors = [];
+
+        if (!$.trim(name)) errors.push('Nombre');
+        if (!$.trim(description)) errors.push('Descripción');
+        if (!$.trim(categoria)) errors.push('Categoría');
+
+        if (errors.length > 0) {
+            
+            $('#feedback').html(`⚠️ Por favor complete todos los campos: <br>- ${errors.join('<br>- ')}`);
+            $('#feedback').css('display', 'flex');
+            $('#feedback').css('background', 'rgba(255, 0, 0, 0.3)');
         } else {
-            alert(`Se guardo correctamente el producto "${name}": ${description} en la categoria ${categoria}`);
+            $('#feedback').html(`<p>✅ Se guardo correctamente el producto <b>${name}</p>`);
+            $('#feedback').css('display', 'flex');
+            $('#feedback').css('background', 'rgba(0, 255, 0, 0.3)');
+            this.reset();
         }
     })
+
+
+
+    $("#cancelbutton").click(function() {
+        $('#feedback').text('');
+        $('#feedback').css('display', 'none');
+    });
 });
 

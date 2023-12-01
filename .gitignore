@@ -1,4 +1,5 @@
 
 .vscode/settings.json
-/t:/xampp/htdocs/MIPROYECTO/assets/img/categories
-/t:/xampp/htdocs/MIPROYECTO/assets/img/products
+.assets/img/categories
+.assets/img/products
+

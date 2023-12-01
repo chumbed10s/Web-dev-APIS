@@ -2,7 +2,7 @@
 /* @author Luciano Bovero */
 
 
-class database {
+class Database {
 
     private $gbd;
     private $driver = 'mysql';

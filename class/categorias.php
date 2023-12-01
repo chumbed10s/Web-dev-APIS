@@ -1,7 +1,7 @@
 <?php
 /* @author Luciano Bovero */
 
-class categoria {
+class Categoria {
     
     public $id;
     public $nombre;
@@ -20,10 +20,13 @@ class categoria {
 
     public function insert(){
         $db = new PDO('mysql:host=localhost;dbname=miproyecto', 'root', '');
-        $db->prepare('INSERT INTO categorias (nombre_categoria, descripcion, tags, color, icono) VALUES (?,?, ?, ?, ?)')->execute(
-            array($this->nombre, $this->descripcion, $this->tags, $this->color, $this->icono)
-        );
-        return $db->lastInsertId();
+        $query = $db->prepare('INSERT INTO categorias (nombre_categoria, descripcion, tags, color, icono) VALUES (?,?, ?, ?, ?)');
+        $result = $query->execute(array($this->nombre, $this->descripcion, $this->tags, $this->color, $this->icono));
+        if ($result) {
+            return $db->lastInsertId();
+        } else {
+            throw new Exception ("No se pudo realizar la consulta de inserción");
+        }
     }
 
     public function delete($id){

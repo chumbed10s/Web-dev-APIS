@@ -7,9 +7,9 @@ class AutoLoad {
 
         $classArray = array();
         $base = __DIR__.DIRECTORY_SEPARATOR;
-        $classArray['database'] = $base.'database.php';
-        $classArray['categoria'] = $base.'categorias.php';
-        $classArray['producto'] = $base.'productos.php';
+        $classArray['Database'] = $base.'database.php';
+        $classArray['Categoria'] = $base.'categorias.php';
+        $classArray['Producto'] = $base.'productos.php';
 
         if (isset($classArray[$class])) {
             if (file_exists($classArray[$class])) {

@@ -3,7 +3,7 @@
 
  include './autoload.php';
 
- class producto {
+ class Producto {
 
     public $id;
     public $nombre;

@@ -10,7 +10,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link id="stylesheet" type="text/css" rel="stylesheet" href="../../assets/css/light/estilos.css">
-    <script src="set_theme.js" defer></script>
+    <script src="../../assets/js/set_theme.js" defer></script>
     <script type="module" src="../../assets/js/validaciones.js"></script>
 
     <!-- incluir jquery -->
@@ -34,11 +34,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <div class="form_main">
             <div id="feedback">
             </div>
-            <form action="" method="POST", id="productForm">
+            <form action="" method="POST", id="productForm" type="multipart/form-data">
                 <fieldset class="fieldsetform">
                     <legend>Datos del Producto</legend>
                     <input class="form_input" type="text" name="nombre" placeholder="Nombre" id="name">
                     <input class="form_input" type="text" name="descripcion" placeholder="Descripción" id="description">
+                    <input class="form_input" type="text" name="precio" placeholder="Precio", id="price">
                     <select title="Categoria" name="categoria" id="category" class="select">
                         <optgroup label="Tecnologia">
                             <option value="computers">Computadoras</option>
@@ -47,20 +48,57 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <option value="audio">Audio</option>
                     </select>
                     
-                    <br>
-                    <img src="../../assets/img/galleryadd.svg" alt="icono" class="galleryicon" title="Subir icono" id="galleryicon">
-                </fieldset>
-                <br>
-                <fieldset class="fieldsetform">
-                    <legend>Personalización</legend>
-                    <label for="color">Color:</label>
-                    <input class="form_input" type="color" value=#00cc00 name="color" placeholder="Color de la categoría">
+                    <!-- Dropzone -->
+                    
+                    
+                    <input type="file" placeholder="Subir imagen" id="image" class="dropper" accept="image/png, image/jpeg">
+                    <label for="image" class="dropper_tag">
+                        <img id="previewImage" alt="Vista previa de la imagen" src="../../assets/img/galleryadd.svg">
+                    </label>
+
+                            
                     
                 </fieldset>
                 <div class="buttons">
                     <button type="reset" class="cancelbutton" id="cancelbutton">Cancelar</button>
                     <button type="submit" class="savebutton">Guardar</button>
                 </div>
+
+                <script>
+                    $(document).ready(function() {
+                        $('#image').change(function() {
+                            const previewImage = $('#previewImage')[0];
+                            const file = this.files[0];
+
+                            if (file) {
+                                const reader = new FileReader();
+
+                                reader.onload = function(e) {
+                                    previewImage.src = e.target.result;
+                                };
+
+                                reader.readAsDataURL(file);
+                                $('#previewImage').css('height', 'auto');
+                                $('#previewImage').css('width', '400px');
+                                $('#previewImage').css('padding', '10px');
+                            } else {
+                                previewImage.src = '';
+                                $('#previewImage').attr('src', '../../assets/img/galleryadd.svg');
+                                $('#previewImage').css('height', 'auto');
+                                $('#previewImage').css('width', '60px');
+                                $('#previewImage').css('padding', '50px');
+                                $('#image').val('');
+                            }
+                        });
+                        $('#cancelbutton').click(function() {
+                            $('#previewImage').attr('src', '../../assets/img/galleryadd.svg');
+                            $('#previewImage').css('height', 'auto');
+                            $('#previewImage').css('width', '60px');
+                            $('#previewImage').css('padding', '50px');
+                            $('#image').val('');
+                        })
+                    });
+                    </script>  
         </div>
         <div class="header">
             <p>Luciano Nicolas Bovero - 46.152.500</p>

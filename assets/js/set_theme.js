@@ -10,14 +10,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let getting = window.matchMedia("(prefers-color-scheme: dark)");
     let isdark = getting.matches;
+    let path = window.location.pathname;
+
+    // basado en el path buscamos el archivo del css
+    // Si estamos en la carpeta backend/views
+    if (path.includes("backend/views")) {
+        path = "../../assets/css/";
+    } else if (path.includes("backend") ) {
+        path = "../assets/css/";
+    }
+
 
     function setdark() {
         if (isdark) {
-            stylesheet.href = "../../assets/css/dark/estilos.css";
+            stylesheet.href = path + "dark/estilos.css";
             localStorage.setItem("darkmode", "enabled");
             isdark = true;
         } else {
-            stylesheet.href = "../../assets/css/light/estilos.css";
+            stylesheet.href = path + "light/estilos.css";
             localStorage.setItem("darkmode", "disabled");
             isdark = false;
         }

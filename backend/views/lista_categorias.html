@@ -3,13 +3,51 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
-<html>
+<html lang="es">
     <head>
-        <title>TODO supply a title</title>
+        <title>Lista Categorias</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Este archivo se incluye desde el php -->
+        <link id="stylesheet" type="text/css" rel="stylesheet" href="../assets/css/light/estilos.css">
+        <script src="../assets/js/set_theme.js" defer></script>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div class="header">
+            <label for="thememode">Tema</label>
+            <select name="colormode" title="Tema" id="thememode" class="select">
+                <option value="enabled">🌙 Oscuro</option>
+                <option value="disabled">☀️ Claro</option>
+                <option value="auto" selected>🎨 Auto</option>
+            </select>
+            <h1>Listado Categorias</h1>
+            <p>Revisa la lista de categorias</p>
+        </div>
+        <div class = "form_main" id="tablesdiv">
+            <table class="tables">
+                <thead class="theadsss">
+                    <th>Icono</th>
+                    <th>Color</th>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Tags</th>
+                    <th>Acciones</th>
+                </thead>
+
+                <td><img src="../assets/img/galleryadd.svg" alt="Vista previa de la imagen"></td>
+                <td>
+                    <!-- We do a square with the color of the category -->
+                    <div class="categorycolor" style="background-color: rgb(255, 0, 0);"></div>
+                </td> <td>1</td> <td>Cocina</td> <td>Cocina Especializada</td> <td>Cocina, Tecnologia</td> 
+                <td><button disabled="disabled" type="button" class="btn-neutral">Eliminar</button> <a href="./views/categorias.html?edit"><button type="button" class="btn-neutral">Editar</button></a></td>
+            </table>
+
+            <a href="./views/categorias.html?add"><button type="button" class="btn-primary">Agregar Categorias</button></a>
+        </div>
+
+        <div class="header">
+            <p>Luciano Nicolas Bovero - 46.152.500</p>
+        </div>
     </body>
 </html>

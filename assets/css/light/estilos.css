@@ -123,6 +123,9 @@ body {
     margin-left: 5px;
     font-family: "Product Sans";
     font-size: 16px;
+    text-anchor: middle;
+    justify-content: center;
+    align-items: center;
 }
 .savebutton {
     background: rgba(43, 255, 0, 0.8);
@@ -137,7 +140,22 @@ body {
     margin-left: 5px;
     font-family: "Product Sans";
     font-size: 16px;
+    text-anchor: middle;
+    justify-content: center;
+    align-items: center;
+
 }
+
+.cancelbutton:hover {
+    background: rgba(133, 0, 0, 0.8);
+    color: #ffffff;
+}
+
+.savebutton:hover {
+    background: rgba(21, 128, 0, 0.8);
+    color: #ffffff;
+}
+
 #feedback {
     display: none;
     flex-direction: column;
@@ -149,4 +167,22 @@ body {
     text-align: center;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+.dropper {
+    display: none;
+}
+
+.dropper_tag {
+    background: rgba(255, 255, 255, 0.3);
+    margin: 10px;
+    border: #c0c0c0 2px dashed;
+    height: 10%;
+    width: 10%;
+    /*display: inline-block;*/
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 50px
+
 }

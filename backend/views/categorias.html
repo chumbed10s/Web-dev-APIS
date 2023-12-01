@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link id="stylesheet" type="text/css" rel="stylesheet" href="../../assets/css/light/estilos.css">
-    <script src="set_theme.js" defer></script>
+    <script src="../../assets/js/set_theme.js" defer></script>
     <script type="module" src="../../assets/js/validaciones.js"></script>
     
     <!-- incluir jquery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
+    
 </head>
 <body>
     
+    
     <div class="container">
         <div class="header">
-            <label for="colormode">Tema</label>
+            <label for="thememode">Tema</label>
             <select name="colormode" title="Tema" id="thememode" class="select">
                 <option value="enabled">🌙 Oscuro</option>
                 <option value="disabled">☀️ Claro</option>
@@ -32,31 +33,39 @@
                 <p>Error</p>
             </div>
             
-            <form action="" method="POST" id="categoryForm">
+            <form action="../../backend/categorias.php" method="POST" id="categoryForm" enctype="multipart/form-data">
                 <fieldset class="fieldsetform">
                     <legend>Datos de la categoría</legend>
-                    <input class="form_input" type="text" name="nombre" placeholder="Nombre" id="name">
-                    <input class="form_input" type="text" name="descripcion" placeholder="Descripción" id="description">
+                    <input class="form_input" type="text" name="name" placeholder="Nombre" id="name">
+                    <input class="form_input" type="text" name="description" placeholder="Descripción" id="description">
                     <input class="form_input" type="text" name="tags" placeholder="Tags (separados por coma)", id="tags">
                 </fieldset>
                 <br>
-                <fieldset class="fieldsetform">
+                <fieldset class="fieldsetform" id="personalization">
                     <legend>Personalización</legend>
-                    <label for="color">Color:</label>
-                    <input class="form_input" type="color" value=#00cc00 name="color" placeholder="Color de la categoría" id="customColor">
-                    <label for="icon">Icono</label>
-                    <input class="form_image" type="image" name="icon" src="../../assets/img/icon.svg" placeholder="Icono de la categoría" title="Subir icono" 
-                    id="customIcon">
+                    <div>
+
+                        <label for="color">Color:</label>
+                        <input class="form_input" type="color" value=#00cc00 name="color" placeholder="Color de la categoría" id="customColor">
+                    </div>
+                    
+                    <!-- Dropzone -->
+
+
+                    <input name= "image" type="file" placeholder="Subir imagen" id="image" class="dropper" accept="image/png, image/jpeg">
+                    <label for="image" class="dropper_tag">
+                        <img id="previewImage" alt="Vista previa de la imagen" src="../../assets/img/galleryadd.svg">
+                    </label>
+                    
                     
                 </fieldset>
                 <div class="buttons">
                     <button type="reset" class="cancelbutton"id="cancelbutton">Cancelar</button>
-                    <button type="submit" class="savebutton" id="save">Guardar</button>
+                    <button type="submit" class="savebutton" id="save" name="save">Guardar</button>
                 </div>
 
             </div>
         </form>
-          
             
         <div class="header">
             <p>Luciano Nicolas Bovero - 46.152.500</p>

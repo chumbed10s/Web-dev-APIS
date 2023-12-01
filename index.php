@@ -9,8 +9,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         <title>Hola</title>
     </head>
     <body>
-        <?php
-        echo("Hola pibe")
-        ?>
+        <h1>Hola</h1>
     </body>
 </html>

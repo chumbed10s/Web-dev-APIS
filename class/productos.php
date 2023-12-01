@@ -1,8 +1,6 @@
 <?php
 /* @author Luciano Bovero */
 
- include './autoload.php';
-
  class Producto {
 
     public $id;
@@ -11,22 +9,23 @@
     public $icono;
     public $precio;
     public $id_categoria;
-    public $color;
     
-    public function __construct($nombre = null, $descripcion = null, $icono=null, $precio=null, $id_categoria=null, $color=null) {
+    public function __construct($nombre = null, $descripcion = null, $icono=null, $precio=null, $id_categoria=null) {
         $this->nombre = $nombre;
         $this->descripcion = $descripcion;
         $this->precio = $precio;
         $this->id_categoria = $id_categoria;
-        $this->color = $color;
         $this->icono = $icono;
     }
 
     public function insert(){
         $db = new PDO('mysql:host=localhost;dbname=miproyecto', 'root', '');
-        $db->prepare('INSERT INTO productos (nombre, descripcion, icono, precio, id_categoria) VALUES (?, ?, ?, ?, ?)')->execute(
+        $db->prepare('INSERT INTO productos (nombre_producto, descripcion, icono, precio, categoria_producto) VALUES (?, ?, ?, ?, ?)')->execute(
             array($this->nombre, $this->descripcion, $this->icono, $this->precio, $this->id_categoria)
         );
+        $product_id = $db->lastInsertId();
+        return $product_id;
+
     }
 
     public function delete($id){

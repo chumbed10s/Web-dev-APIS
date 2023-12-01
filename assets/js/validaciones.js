@@ -47,12 +47,18 @@ document.addEventListener('DOMContentLoaded', function() {
         var name = $('#name').val();
         var description = $('#description').val();
         var categoria = $('#category').val();
+        var image = $('#image').val();
+        var price = $('#price').val();
+
         
         const errors = [];
 
         if (!$.trim(name)) errors.push('Nombre');
         if (!$.trim(description)) errors.push('Descripción');
         if (!$.trim(categoria)) errors.push('Categoría');
+        if (!$.trim(image)) errors.push('Imagen');
+        if (!$.trim(price)) errors.push('Precio');
+
 
         if (errors.length > 0) {
             event.preventDefault();
@@ -129,6 +135,30 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             $('#feedback').css('display', 'none');
 
+        }
+    }
+    if (window.location.href.includes('views/productos.html')) {
+        if (window.location.href.includes('?add=true')) {
+
+            // get the json data
+            let datas = window.location.href.split('&');
+            let name = datas[1].split('name=')[1];
+            let id = datas[2].split('id=')[1];
+
+
+            // parse the json
+            $('#feedback').css('display', 'flex');
+            $('#feedback').css('background', 'rgba(0, 255, 0, 0.3)');
+            $('#feedback').html('<p>✅ Se guardo correctamente el producto <b>' + name + '</b> con el ID <b>' + id + '</b></p>');
+        } else if (window.location.href.includes('?add_error=')) {
+            
+            let error = window.location.href.split('?add_error=')[1];
+            // desencodeamos el error para mostrarlo
+            error = decodeURI(error);
+
+            $('#feedback').css('display', 'flex');
+            $('#feedback').css('background', 'rgba(255, 0, 0, 0.3)');
+            $('#feedback').text(`⚠️ Vaya, ocurrio un error: ${error}`);
         }
     }
     

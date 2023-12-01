@@ -111,11 +111,20 @@ body {
 }
 
 .select {
-    border-radius: 20px;
     background-color: #000000;
     color: #ffffff;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    border-color: transparent;
+    margin-right: 5px;
+    text-wrap: pretty;
+    padding: 10px;
+    width: 100%;
+    font-family: "Product Sans";
+    display: block;
+    font-size: 14px;
+    height: 80px;
 }
-
 .buttons {
     display: flex;
     flex-direction: row;

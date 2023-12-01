@@ -25,20 +25,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
             $icon = str_replace("../", "", $icon);
         }
 
-        $category = new categoria($name, $description, $tags, $color, $icon);
-        $id_categoria = $category->insert();
+        $category = new Categoria($name, $description, $tags, $color, $icon);
         try {
             $id_categoria = $category->insert();
         }
         catch (Exception $e) {
-            echo $e;
+            $error = $e->getTraceAsString();
             $id_categoria = null;
         }
 
-        //if ($id_categoria != null) {
-        //    header("Location: categorias.php");
-        //}
-        echo "<div class='header'>Se guardo correctamente la categoria <b>$name</b> con el ID <b>$id_categoria</b></div>";
+        if ($id_categoria != null) {
+            // Si se inserto correctamente recargamos la pagina de categorias con el banner de exito junto pasamos los datos de la categoria insertada en json
+
+            header("Location: ./views/categorias.html?add=true&name=$name&id=$id_categoria");
+            die();
+        } else {
+            header("Location: ./views/categorias.html?add_error=$error");
+            die();
+        }
+
         
     }
 }

@@ -14,10 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // basado en el path buscamos el archivo del css
     // Si estamos en la carpeta backend/views
+    
     if (path.includes("backend/views")) {
         path = "../../assets/css/";
     } else if (path.includes("backend") ) {
         path = "../assets/css/";
+    } else if (path.includes("views")) {
+        path = "../assets/css/";
+    } else {
+        path = "./assets/css/";
     }
 
 

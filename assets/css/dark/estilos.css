@@ -7,9 +7,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     Author     : lucia
 */
 
+
+
 body {
-    background: linear-gradient(225deg, #3a003c, #00394a);
-    color: #ffffff;
+    background: #1f1f1f;
+    color: #f5f5f5;
     font-family: "Product Sans";
     display: flex;
     flex-direction: column;
@@ -31,16 +33,17 @@ body {
     text-align: center;
     background: linear-gradient(to right, #0c4700, #004053);
     padding: 20px;
-    color: #ffffff;
+    color: #f5f5f5;
     border-radius: 20px;
     margin: 20px;
     display:block;
-    width: 150vh;
+    width: 90%;
+    height: auto;
 }
 
 .form_main {
     background: rgba(0, 0, 0, 0.3);
-    color: #ffffff;
+    color: #f5f5f5;
     padding: 20px;
     border-radius: 20px;
     margin-bottom: 10px;
@@ -53,7 +56,7 @@ body {
 
 .form_input {
     background-color: #000000;
-    color: #ffffff;
+    color: #f5f5f5;
     margin-bottom: 5px;
     border-radius: 20px;
     border-color: transparent;
@@ -103,7 +106,7 @@ body {
 
 .form_image {
     border-radius: 20px;
-    border: 2px solid #ffffff;
+    border: 2px solid #f5f5f5;
 }
 .form_image:hover{
     border-radius: 20px;
@@ -112,18 +115,15 @@ body {
 
 .select {
     background-color: #000000;
-    color: #ffffff;
+    color: #f5f5f5;
     margin-bottom: 5px;
     border-radius: 20px;
     border-color: transparent;
     margin-right: 5px;
     text-wrap: pretty;
     padding: 10px;
-    width: 100%;
     font-family: "Product Sans";
-    display: block;
     font-size: 14px;
-    height: 80px;
 }
 .buttons {
     display: flex;
@@ -168,11 +168,11 @@ body {
 }
 .cancelbutton:hover {
     background: rgba(255, 0, 0, 0.8);
-    color: #ffffff;
+    color: #f5f5f5;
 }
 .savebutton:hover {
     background: rgba(43, 255, 0, 0.8);
-    color: #ffffff;
+    color: #f5f5f5;
 }
 
 #feedback {
@@ -182,7 +182,7 @@ body {
     border-radius: 20px;
     border-radius: 20px;
     margin-bottom: 15px;
-    color: #ffffff;
+    color: #f5f5f5;
     text-align: center;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -221,7 +221,7 @@ th {
     background: rgba(24, 146, 0, 0.8);
     padding: 5px;
     border-radius: 5px;
-    color: #ffffff;
+    color: #f5f5f5;
     text-align: center;
     font-family: "Product Sans";
     font-size: 16px;
@@ -231,7 +231,7 @@ th {
 td {
     background: rgba(0, 0, 0, 0.616);
     border-radius: 5px; 
-    color: #ffffff;
+    color: #f5f5f5;
     text-align: center;
     
 
@@ -252,12 +252,12 @@ td {
 
 .btn-primary:hover {
     background: rgba(7, 39, 0, 0.8);
-    color: #ffffff;
+    color: #f5f5f5;
 }
 
 .btn-neutral {
     background: rgba(61, 61, 61, 0.8);
-    color: #ffffff;
+    color: #f5f5f5;
     width: 100%;
     height: 4vh;
     border-radius: 20px;
@@ -278,7 +278,7 @@ td {
 
 .btn-neutral:hover {
     background: rgba(129, 129, 129, 0.8);
-    color: #ffffff;
+    color: #f5f5f5;
 }
 
 
@@ -301,4 +301,96 @@ td {
     height: 20px;
     border-radius: 10px;
     display: inline-block;
+}
+
+
+.navbarhome {
+    background: #2d2f31;
+    color: #f5f5f5;
+    font-family: "Product Sans";
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 7vh;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 7vh;
+    height: 7vh;
+}
+
+.navbarhome>ul{
+    display: flex;
+    flex-direction: row;
+}
+.navbarhome>ul>li{
+    list-style: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.navbarhome>ul>li>a{
+    color: #bababa;
+    text-decoration: none;
+    font-family: "Product Sans";
+    font-size: 20px;
+}
+
+.navbarhome>ul>li>a:hover{
+    color: #27df00;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(300px, 400px));
+    gap: 10px;
+
+}
+
+.card {
+    padding: 10px;
+    background: rgba(18, 18, 18, 0.8);
+    border-radius: 20px;
+    margin: 10px;
+    border: #c0c0c0 2px dashed;
+
+    display: flex;
+    flex-direction: row;
+
+    
+}
+
+.card_text {
+    color: #f5f5f5;
+}
+
+.card_img>img {
+    width: 100px;
+    height: auto;
+    border-radius: 20px;
+    margin-right: 10px;
+
+}
+
+.category {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.category>.point {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    margin-right: 5px;
+
+}
+
+.category>p {
+    color: #f5f5f5;
+    font-family: "Product Sans";
+    font-size: 14px;
 }

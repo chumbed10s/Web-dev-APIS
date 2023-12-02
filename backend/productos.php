@@ -36,12 +36,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
         if ($id_product != null) {
             // Si se inserto correctamente recargamos la pagina de categorias con el banner de exito junto pasamos los datos de la categoria insertada en json
 
-            header("Location: ./views/productos.html?add=true&name=$name&id=$id_product");
+            header("Location: ./views/productos.php?add=true&name=$name&id=$id_product");
             die();
         } else {
             // Formateamos el error para ser apto en una url
             $error = urlencode($error);
-            header("Location: ./views/productos.html?add_error=$error");
+            header("Location: ./views/productos.php?add_error=$error");
             die();
         }
 
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
     
 
 if (isset($_GET["add"])) {
-    include "./views/productos.html";
+    include "./views/productos.php";
     die();
 }
 

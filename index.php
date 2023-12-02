@@ -6,9 +6,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Hola</title>
+        <title>Mi pagina web</title>
     </head>
     <body>
-        <h1>Hola</h1>
+
+
+        <?php 
+            include './views/home.php'
+        ?>
+
+
     </body>
 </html>

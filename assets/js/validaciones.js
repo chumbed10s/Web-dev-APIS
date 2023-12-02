@@ -111,9 +111,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // if the url ends with ?add=true, show the feedback
+    
     if (window.location.href.includes('views/categorias.html')) {
-        console.log(window.location.href);
         if (window.location.href.includes('?add=true')) {
+
 
             // get the json data
             let datas = window.location.href.split('&');
@@ -137,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         }
     }
-    if (window.location.href.includes('views/productos.html')) {
+    if (window.location.href.includes('views/productos.php')) {
         if (window.location.href.includes('?add=true')) {
 
             // get the json data
@@ -159,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
             $('#feedback').css('display', 'flex');
             $('#feedback').css('background', 'rgba(255, 0, 0, 0.3)');
             $('#feedback').text(`⚠️ Vaya, ocurrio un error: ${error}`);
-        }
+        } 
     }
     
 });
